@@ -1,34 +1,43 @@
 .row
   .col.s12
-    Team players
+    %h3
+      = header(@switch,params)
     - @team_players.each do |tp|
       %ul.collapsible.popout{ "data-collapsible" => "accordion"}
         %li
           .collapsible-header
-            %i.material-icons
-            = tp.full_name
-          .collapsible-body
-            <!-- Dropdown Trigger -->
-            %a.dropdown-button.btn.width_fix{ href: '#', 'data-activates' => "dropdown#{tp.id}"}
-              My Features
-            %ul.dropdown-content{id: "dropdown#{tp.id}"}
-              %li.orange
-                Bowling Type : 
-                %a{href: "#{team_path(@team)}?bowling_type=#{tp.bowling_type}"}
-                  = tp.bowling_type
-              %li.pink
-                Batting Hand : 
-                %a{href: "#{team_path(@team)}?batting_hand=#{tp.batting_hand}"}
-                  = tp.batting_hand
-              %li.green
-                Bowling Hand : 
-                %a{href: "#{team_path(@team)}?bowling_hand=#{tp.bowling_hand}"}
-                  = tp.bowling_hand
-              %li.blue
-                %a{href: tp.keeper ? "#{team_path(@team)}?keeper=true" : "#{team_path(@team)}?keeper=false"}
-                  = tp.keeper ? "Keeper" : "Not a Keeper"
+            .width_45
+              %i.material-icons
+              = tp.full_name
+            .width_45.float_right
+              <!-- Dropdown Trigger -->
+              %a.dropdown-button.btn.width_fix{ href: '#', 'data-activates' => "dropdown#{tp.id}"}
+                My Features
+              %ul.dropdown-content{id: "dropdown#{tp.id}"}
+                %li
+                  Bowling Type : 
+                  %a{href: "#{team_path(@team)}?bowling_type=#{tp.bowling_type}"}
+                    = tp.bowling_type
+                %li
+                  Batting Hand : 
+                  %a{href: "#{team_path(@team)}?batting_hand=#{tp.batting_hand}"}
+                    = tp.batting_hand
+                %li
+                  Bowling Hand : 
+                  %a{href: "#{team_path(@team)}?bowling_hand=#{tp.bowling_hand}"}
+                    = tp.bowling_hand
+                %li
+                  %a{href: tp.keeper ? "#{team_path(@team)}?keeper=true" : "#{team_path(@team)}?keeper=false"}
+                    = tp.keeper ? "Keeper" : "Not a Keeper"
 
 
 = link_to 'Edit', edit_team_path(@team)
 \|
 = link_to 'Back', teams_path
+
+
+:javascript
+  $(function(){
+    $('.collapsible').collapsible();
+    $('.dropdown-button').dropdown()
+  });

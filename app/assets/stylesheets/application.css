@@ -23,3 +23,10 @@ select{
 .width_fix{
   width: 50%;
 }
+
+.width_45{
+  width: 45%;
+}
+.float_right{
+  float: right;
+}

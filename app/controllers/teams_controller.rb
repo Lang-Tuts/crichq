@@ -7,14 +7,19 @@ class TeamsController < ApplicationController
 
   def show
     if params[:bowling_type]
+      @switch = 1 
       @team_players = Player.where(bowling_type: params[:bowling_type])
     elsif params[:batting_type]
+      @switch = 2 
       @team_players = Player.where(batting_type: params[:batting_type])
     elsif params[:bowling_hand]
+      @switch = 3 
       @team_players = Player.where(bowling_hand: params[:bowling_hand])
     elsif params[:keeper]
+      @switch = 4 
       @team_players = Player.where(keeper: params[:keeper])
     else
+      @switch = 5 
       @team_players = Player.where('teams like ?',@team.name)
     end
 

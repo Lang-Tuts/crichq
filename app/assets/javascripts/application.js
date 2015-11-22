@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$('.collapsible').collapsible();
+
+$(function(){
+  $('.collapsible').collapsible();
+  $('.dropdown-button').dropdown()
+});
