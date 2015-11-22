@@ -1,4 +1,4 @@
-= form_for @player do |f|
+= simple_form_for @player do |f|
   - if @player.errors.any?
     #error_explanation
       %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
@@ -13,17 +13,16 @@
     = f.label :last_name
     = f.text_field :last_name
   .field
-    = f.label :bowling_type
-    = f.number_field :bowling_type
+    = f.input :bowling_type, collection: Player::BOWLING_TYPES
+
   .field
-    = f.label :batting_hand
-    = f.number_field :batting_hand
+    = f.input :batting_hand, collection: Player::BATTING_HAND
+
   .field
-    = f.label :bowling_hand
-    = f.number_field :bowling_hand
+    = f.input :bowling_hand, collection: Player::BOWLING_TYPE
+
   .field
-    = f.label :keeper
-    = f.check_box :keeper
+    = f.input :keeper, collection: [["Yes",1],["No", 0]]
   .field
     = f.label :teams
     = f.text_area :teams

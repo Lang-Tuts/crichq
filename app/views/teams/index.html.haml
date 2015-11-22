@@ -5,11 +5,12 @@
       .card.yellow.darken-1.z-depth-2
         .card-content.white-text
           %span.card-title
-            = team.name
+            = link_to team.name, team_path(team)
         .card-action
           %a{:href=>"#"}
             = link_to image_tag('edit-table_icon.png'), edit_team_path(team)
           %a{:href=>"#"}
             = link_to image_tag('deletecircle.png'), team, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-
+.row
+  = link_to "New Team", new_team_path,  class: 'btn'

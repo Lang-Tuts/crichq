@@ -17,3 +17,9 @@
   color: red;
   font-size: 16px; 
 }
+select{
+  display: inline;
+}
+.width_fix{
+  width: 50%;
+}
