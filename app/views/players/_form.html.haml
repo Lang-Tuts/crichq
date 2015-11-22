@@ -23,8 +23,15 @@
 
   .field
     = f.input :keeper, collection: [["Yes",1],["No", 0]]
+  %br
+  %br
+  %br
   .field
-    = f.label :teams
+    = f.label "Teams"
+    %a.tooltipped{"data-position" => "bottom", "data-delay" => "50", "data-tooltip" => "The teams name should be comma seperated ex: Pakistan, Srilanka, India"}
+      Need Help ?
     = f.text_area :teams
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn'
+    %br
+    %br

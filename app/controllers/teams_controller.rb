@@ -7,20 +7,27 @@ class TeamsController < ApplicationController
 
   def show
     if params[:bowling_type]
-      @switch = 1 
+      @switch = 1
       @team_players = Player.where(bowling_type: params[:bowling_type])
     elsif params[:batting_type]
-      @switch = 2 
+      @switch = 2
       @team_players = Player.where(batting_type: params[:batting_type])
     elsif params[:bowling_hand]
-      @switch = 3 
+      @switch = 3
       @team_players = Player.where(bowling_hand: params[:bowling_hand])
     elsif params[:keeper]
-      @switch = 4 
+      if params[:keeper] == "true"
+        @switch = 4
+      else
+        @switch = 5
+      end
       @team_players = Player.where(keeper: params[:keeper])
+    elsif params[:batting_hand]
+      @switch = 6
+      @team_players = Player.where(batting_hand: params[:batting_hand])
     else
-      @switch = 5 
-      @team_players = Player.where('teams like ?',@team.name)
+      @switch = 7
+      @team_players = Player.where('lower(teams) like ?',"%#{@team.name.downcase}%")
     end
 
   end

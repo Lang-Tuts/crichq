@@ -22,6 +22,7 @@
   %b Teams:
   = @player.teams
 
-= link_to 'Edit', edit_player_path(@player)
-\|
-= link_to 'Back', players_path
+%span
+  = link_to 'Edit', edit_player_path(@player), class: 'btn'
+%span
+  = link_to 'Back', players_path, class: 'btn'

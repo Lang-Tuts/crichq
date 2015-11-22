@@ -17,5 +17,6 @@
 
 $(function(){
   $('.collapsible').collapsible();
-  $('.dropdown-button').dropdown()
+  $('.dropdown-button').dropdown();
+  $('.tooltipped').tooltip({delay: 50});
 });

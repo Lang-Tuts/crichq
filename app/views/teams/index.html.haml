@@ -5,7 +5,7 @@
       .card.blue-grey.lighten-5.z-depth-2
         .card-content.white-text
           %span.card-title
-            = link_to team.name, team_path(team)
+            = link_to team.name.try(:titleize), team_path(team)
         .card-action
           %a{:href=>"#"}
             = link_to image_tag('edit-table_icon.png'), edit_team_path(team)

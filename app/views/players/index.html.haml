@@ -3,9 +3,9 @@
   - @players.each do |player|
     %li.collection-item
       = player.full_name
-      %span.float-right
-        = link_to 'Show', player
-        = link_to 'Delete', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %span.float-right.margin_fix
+        = link_to 'Show', player, class: 'btn'
+        = link_to 'Delete', player, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn red'
 
 %br
 
