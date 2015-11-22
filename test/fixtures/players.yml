@@ -1,0 +1,18 @@
+
+one:
+  first_name: MyString
+  last_name: MyString
+  bowling_type: 1
+  batting_hand: 1
+  bowling_hand: 1
+  keeper: false
+  teams: MyText
+
+two:
+  first_name: MyString
+  last_name: MyString
+  bowling_type: 1
+  batting_hand: 1
+  bowling_hand: 1
+  keeper: false
+  teams: MyText

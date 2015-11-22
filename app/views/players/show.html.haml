@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @player.first_name
+%p
+  %b Last name:
+  = @player.last_name
+%p
+  %b Bowling type:
+  = @player.bowling_type
+%p
+  %b Batting hand:
+  = @player.batting_hand
+%p
+  %b Bowling hand:
+  = @player.bowling_hand
+%p
+  %b Keeper:
+  = @player.keeper
+%p
+  %b Teams:
+  = @player.teams
+
+= link_to 'Edit', edit_player_path(@player)
+\|
+= link_to 'Back', players_path

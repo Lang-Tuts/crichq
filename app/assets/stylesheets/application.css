@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.txt_fields{
+  color: red;
+  font-size: 16px; 
+}

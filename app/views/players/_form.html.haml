@@ -1,0 +1,31 @@
+= form_for @player do |f|
+  - if @player.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
+      %ul
+        - @player.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :bowling_type
+    = f.number_field :bowling_type
+  .field
+    = f.label :batting_hand
+    = f.number_field :batting_hand
+  .field
+    = f.label :bowling_hand
+    = f.number_field :bowling_hand
+  .field
+    = f.label :keeper
+    = f.check_box :keeper
+  .field
+    = f.label :teams
+    = f.text_area :teams
+  .actions
+    = f.submit 'Save'
